@@ -1,6 +1,8 @@
 # project set
 node-webkit.app
 data
+lib
+img
 
 # Logs
 logs
