@@ -36,11 +36,10 @@
     <dt>定病：{{case.dingbing}}</dt>
     <dt>定性：{{case.dingxing}}</dt>
     <dt>定症：{{case.dingzheng}}</dt>
-    <div>处方：
-    
-      <span ng-repeat="item in case.recipe">
-        {{item.medicine}}  {{item.count}}  {{item.units}}  {{item.remark}}
-      </span>
+    <div>处方：<br>
+      <li ng-repeat="item in case.recipe">
+        {{item.medicine}}  {{item.count}}  {{item.unit}}  <br>
+      </li>
     </div>
 
 
