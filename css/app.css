@@ -1,7 +1,7 @@
 /* app css stylesheet */
 
 body {
-  padding-top: 10px;
+  padding-top: 1px;
 }
 
 .phones {
@@ -10,12 +10,20 @@ body {
 
 .list_A {
   float: left;
-  margin: -1em 1em 1em 0em;
-  padding-bottom: 1em;
-  height: 80px;
-  width: 120px;
+  margin: 0.1em 0.1em 0.1em 1em;
+  padding-bottom: 0.1em;
+  height: 50px;
+  width: 180px;
   list-style: none;
-  font-size: 2em;
+  font-size: 1.2em;
+}
+
+.detail_AA {
+  float: left;
+  margin: 0.1em 0.1em 0.1em 1em;
+  padding-bottom: 0.1em;
+  list-style: none;
+  font-size: 1.2em;
 }
 
 .thumb {
