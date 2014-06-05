@@ -2,14 +2,11 @@
   <div class="span2_bak">
     搜索: <input ng-model="query">
   </div>
-  <br><br><br>
-  <br>
+  <br><br>
   <div>
    <li ng-repeat="obj in datas | filter:query | orderBy:orderProp" class="list_A">
     <a href="#/phones/{{obj.patients.patient_no}}">
-      <div>{{obj.patients.patient_no}}</div>
-      <br>
-      {{obj.patients.name}}
+      <div>{{obj.patients.patient_no}} {{obj.patients.name}}</div>
     </a>
   </li>
 </div>
