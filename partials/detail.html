@@ -7,47 +7,42 @@
 {{phone_temp.interview_date}}
 <li class="phone-thumbs" ng-repeat="img in phone_temp.case_photoes">
   <img ng-src="{{img}}" ng-click="setImage(img)">
-</li><hr style="color:red;" />
+</li><hr />
 
 </div>
 
-
-
 </td><td>
 <span class="phone">
-<img ng-src="{{mainImageUrl}}" width="500" height="700" />
+<img ng-src="{{mainImageUrl}}" wispanh="500" height="700" />
 </span>
-</td><td>
-<h1>
-  <img ng-src="{{phone.patients_photoes[0]}}" class="phone-thumbs">
-  <br/>
-  {{datas.patients.patient_no}}   {{datas.patients.name}}  
-</h1>
+</td><td width="300">
+  <h1>
+    <img ng-src="{{phone.patients_photoes[0]}}" class="phone-thumbs">
+    <br/>
+    {{datas.patients.patient_no}}   {{datas.patients.name}}  
+  </h1>
 
-
-<span>  
-  <dl>
-    <dt>性别：{{datas.patients.sex}}  &nbsp;&nbsp;年龄：{{datas.patients.age}}</dt>
-    <dt>联系电话：{{datas.patients.phone_no}}</dt>
-    <dt>备注：{{datas.patients.comment}}</dt>
-  </dl>
-
-  <dl ng-repeat="case in datas.cases">
-    <dt>定病：{{case.dingbing}}</dt>
-    <dt>定性：{{case.dingxing}}</dt>
-    <dt>定症：{{case.dingzheng}}</dt>
-    <div>处方：<br>
-      <li ng-repeat="item in case.recipe">
-        {{item.medicine}}  {{item.count}}  {{item.unit}}  <br>
-      </li>
-    </div>
-
-
-  </dl> 
-
+  <div>
+    <span>性别：{{datas.patients.sex}}  &nbsp;&nbsp;年龄：{{datas.patients.age}}</span>
+    <br><span>联系电话：{{datas.patients.phone_no}}</span>
+    <span>备注：{{datas.patients.comment}}</span>
+  </div>
   
+  <div ng-repeat="case in datas.cases">
+    <hr>
+    处方编号：{{case.case_no}}<br>
+    定病：{{case.dingbing}}<br>
+    定性：{{case.dingxing}}<br>
+    定症：{{case.dingzheng}}<br>
 
-</span>
+    <div class="detail_A"><br>药方：<br>
+      <span ng-repeat="item in case.recipe" >
+        {{item.medicine}}  {{item.count}}  {{item.unit}}  <br>
+      </span>
+    </div>
+  </div>
+
+   
 
 </td></tr></table>
 
