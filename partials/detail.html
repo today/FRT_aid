@@ -3,21 +3,21 @@
 
 <table><tr><td>
 
-<div  ng-repeat="phone_temp in phones" >
-{{phone_temp.interview_date}}
-<li class="phone-thumbs" ng-repeat="img in phone_temp.case_photoes">
-  <img ng-src="{{img}}" ng-click="setImage(img)">
-</li><hr />
+<div  ng-repeat="case in datas.cases" >
+{{case.case_no}}
+  <li class="phone-thumbs" ng-repeat="image in case.images">
+    <img ng-src="img/{{image}}" ng-click="setImage('img/'+image)">
+  </li><hr />
 
 </div>
 
-</td><td>
-<span class="phone">
-<img ng-src="{{mainImageUrl}}" wispanh="500" height="700" />
-</span>
 </td><td width="300">
+<span class="phone">
+<img ng-src="{{mainImageUrl}}" width="600" height="800" />
+</span>
+</td><td width="200">
   <h1>
-    <img ng-src="{{phone.patients_photoes[0]}}" class="phone-thumbs">
+    <img src="img/{{datas.patients.image}}" class="phone-thumbs">
     <br/>
     {{datas.patients.patient_no}}   {{datas.patients.name}}  
   </h1>

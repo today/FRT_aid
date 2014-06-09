@@ -45,6 +45,7 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
     tempObj = _.find(bObj, function(tObj){ return tObj.patients.patient_no == $routeParams.phoneId; });
     console.log(tempObj);
     $scope.datas = tempObj;
+    $scope.mainImageUrl = "img/" + tempObj.cases[0].images[0];
 
 
     $scope.setImage = function(imageUrl) {
