@@ -31,10 +31,18 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
       //console.log("getBooking(): " + strBookingList);
       aObj = JSON.parse(str_temp);
     }
+
+    var bObj = [];
+    for( var i=0; i<aObj.length; i++){
+        var p_obj = aObj[i];
+        if( p_obj.patients  ){
+            bObj.push(p_obj);
+        }
+    }
     
     var _ = require("underscore");
     var tempObj = {};
-    tempObj = _.find(aObj, function(tObj){ return tObj.patients.patient_no == $routeParams.phoneId; });
+    tempObj = _.find(bObj, function(tObj){ return tObj.patients.patient_no == $routeParams.phoneId; });
     console.log(tempObj);
     $scope.datas = tempObj;
 
