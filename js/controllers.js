@@ -21,7 +21,6 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope',
 
 phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 
   function($scope, $routeParams, $http) {
-    
 
     var fs = require('fs');
     var strFilename = 'data/for_doctor.json';
@@ -46,10 +45,14 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
     console.log(tempObj);
     $scope.datas = tempObj;
     $scope.mainImageUrl = "img/" + tempObj.cases[0].images[0];
+    $scope.current_recipe = tempObj.cases[0];
 
 
-    $scope.setImage = function(imageUrl) {
+    $scope.setImage = function(imageUrl, caseObj ) {
       $scope.mainImageUrl = imageUrl;
+      //alert(caseObj.case_no);
+      $scope.current_recipe = caseObj ;
+
     }
   }]);
 

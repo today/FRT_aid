@@ -6,7 +6,7 @@
 <div  ng-repeat="case in datas.cases" >
 {{case.case_no}}
   <li class="phone-thumbs" ng-repeat="image in case.images">
-    <img ng-src="img/{{image}}" ng-click="setImage('img/'+image)">
+    <img ng-src="img/{{image}}" ng-click="setImage('img/'+image, case)">
   </li><hr />
 
 </div>
@@ -28,7 +28,22 @@
     <span>备注：{{datas.patients.comment}}</span>
   </div>
   
-  <div ng-repeat="case in datas.cases">
+  
+    <hr>
+    处方编号：{{current_recipe.case_no}}<br>
+    定病：{{current_recipe.dingbing}}<br>
+    定性：{{current_recipe.dingxing}}<br>
+    定症：{{current_recipe.dingzheng}}<br>
+
+    <div class="detail_A"><br>药方：<br>
+      <span ng-repeat="item in current_recipe.recipe" >
+        <span ng-if="item.medicine">
+        {{item.medicine}}  {{item.count}}  {{item.unit}}  </span><br>
+      </span>
+    </div>
+ 
+<!--
+  <div ng-repeat="case in datas.cases "  >
     <hr>
     处方编号：{{case.case_no}}<br>
     定病：{{case.dingbing}}<br>
@@ -42,7 +57,7 @@
       </span>
     </div>
   </div>
-
+-->
    
 
 </td></tr></table>
