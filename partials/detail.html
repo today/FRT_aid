@@ -1,7 +1,7 @@
 
 
 
-<table><tr><td>
+<table><tr><td style="vertical-align:top">
 
 <div  ng-repeat="case in datas.cases" >
 {{case.case_no}}
@@ -11,7 +11,7 @@
 
 </div>
 
-</td><td width="300">
+</td><td width="300" style="vertical-align:top">
 <span class="phone">
 <img ng-src="{{mainImageUrl}}" width="600" height="800" />
 </span>
@@ -24,7 +24,7 @@
 
   <div>
     <span>性别：{{datas.patients.sex}}  &nbsp;&nbsp;年龄：{{datas.patients.age}}</span>
-    <br><span>联系电话：{{datas.patients.phone_no}}</span>
+    <br><!--    span>联系电话：{{datas.patients.phone_no}}</span>    -->
     <span>备注：{{datas.patients.comment}}</span>
   </div>
   
@@ -37,7 +37,8 @@
 
     <div class="detail_A"><br>药方：<br>
       <span ng-repeat="item in case.recipe" >
-        {{item.medicine}}  {{item.count}}  {{item.unit}}  <br>
+        <span ng-if="item.medicine">
+        {{item.medicine}}  {{item.count}}  {{item.unit}}  </span><br>
       </span>
     </div>
   </div>
