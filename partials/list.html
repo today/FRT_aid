@@ -6,8 +6,9 @@
   <div>
    <li ng-repeat="obj in datas | filter:query | orderBy:orderProp" class="list_A">
     <a href="#/phones/{{obj.patients.patient_no}}">
-      <div>{{obj.patients.patient_no}} {{obj.patients.patient_name}}</div>
+      <div>{{obj.patients.patient_no}} {{obj.patients.patient_name}}  </div>
     </a>
+    <div ng-if="obj.cases.length>0">{{obj.cases.length}} 份处方</div>
   </li>
 </div>
 
