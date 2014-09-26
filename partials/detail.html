@@ -3,7 +3,7 @@
 
 <table><tr><td style="vertical-align:top">
 
-<div  ng-repeat="case in datas.cases" >
+<div  ng-repeat="case in datas.cases | orderBy:to_Date:true" >
 {{case.case_no}}
   <li class="phone-thumbs" ng-repeat="image in case.images">
     <img ng-src="img/{{image}}" ng-click="setImage('img/'+image, case)">

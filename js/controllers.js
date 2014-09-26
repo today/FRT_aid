@@ -54,5 +54,15 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
       $scope.current_recipe = caseObj ;
 
     }
+
+    $scope.to_Date = function(obj){
+      var c_no = obj.case_no;
+      var idx = c_no.indexOf("_");
+      var str_date = c_no.substring(0,idx);
+      var date_date = new Date(str_date);
+      //console.log(date_date);
+      
+      return date_date;
+    }
   }]);
 
