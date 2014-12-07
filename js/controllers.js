@@ -64,5 +64,12 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
       
       return date_date;
     }
+
+    $scope.goPrint = function(img_url){
+
+      window.open("print.html?" + img_url 
+                , "Print", "width=630,height=820,location=no,directories=no,menubar=no,resizable=no,toolbar=no");
+    }
+
   }]);
 
