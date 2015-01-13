@@ -18,9 +18,25 @@ body {
   font-size: 1.2em;
 }
 
-.detail_AA {
+.detail_A {
   float: left;
   margin: 0.1em 0.1em 0.1em 1em;
+  padding-bottom: 0.1em;
+  list-style: none;
+  font-size: 1.2em;
+}
+
+.detail_B {
+  float: left;
+  margin: 0.1em 1em 0.1em 2em;
+  padding-bottom: 0.1em;
+  list-style: none;
+  font-size: 1em;
+}
+
+.detail_C {
+  float: left;
+  margin: 0.1em 0.1em 0.1em 0.1em;
   padding-bottom: 0.1em;
   list-style: none;
   font-size: 1.2em;

@@ -42,18 +42,23 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
     var _ = require("underscore");
     var tempObj = {};
     tempObj = _.find(bObj, function(tObj){ return tObj.patients.patient_no == $routeParams.phoneId; });
-    console.log(tempObj);
+    //console.log(tempObj);
     $scope.datas = tempObj;
-    $scope.mainImageUrl = "img/" + tempObj.cases[0].images[0];
+    //$scope.mainImageUrl = "img/" + tempObj.cases[0].images[0];
     $scope.current_recipe = tempObj.cases[0];
 
-
+    $scope.old_case_flag = true;
     $scope.setImage = function(imageUrl, caseObj ) {
       $scope.mainImageUrl = imageUrl;
       //alert(caseObj.case_no);
       $scope.current_recipe = caseObj ;
+      $scope.old_case_flag = true;
+    };
 
-    }
+    $scope.setCase = function( caseObj ) {
+      $scope.current_recipe = caseObj ;
+      $scope.old_case_flag = false;
+    };
 
     $scope.to_Date = function(obj){
       var c_no = obj.case_no;
@@ -63,13 +68,12 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
       //console.log(date_date);
       
       return date_date;
-    }
+    };
 
     $scope.goPrint = function(img_url){
-
       window.open("print.html?" + img_url 
                 , "Print", "width=630,height=820,location=no,directories=no,menubar=no,resizable=no,toolbar=no");
-    }
+    };
 
   }]);
 
