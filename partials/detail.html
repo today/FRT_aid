@@ -26,21 +26,14 @@
       定症：{{current_recipe.dingzheng}}
     </h3>
     <h2>药方：</h2>
-        <table class="detail_C">
-          <tr ng-repeat="item in current_recipe.recipe" >
-            <td>
-              <span ng-if="item.medicine">
-                {{item.medicine}}
-              </span>
-              <span ng-if="item.medicine_name">
-                {{item.medicine_name}} 
-              </span>
-            </td>
-            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.count}} </td>
-            <td>{{item.unit}}</td>
-          </td>
-        </tr>
-      </table>
+        <span ng-repeat="item in current_recipe.recipe" class="detail_C" style="float:left;">
+          <span ng-if="item.medicine">
+            {{item.medicine}}  {{item.count}}{{item.unit}}  <br>
+          </span>
+          <span ng-if="item.medicine_name">
+            {{item.medicine_name}}  {{item.count}}{{item.unit}}  <br>
+          </span>
+        </span>
   </div>
 
 </td>
@@ -67,16 +60,16 @@
 
     <div class="detail_A">
       <br>药方：<br>
-      <h2>
+      
         <span ng-repeat="item in current_recipe.recipe" >
           <span ng-if="item.medicine">
-            {{item.medicine}}  {{item.count}}  {{item.unit}}  
-          </span><br>
+            {{item.medicine}}  {{item.count}}  {{item.unit}}  <br>
+          </span>
           <span ng-if="item.medicine_name">
-            {{item.medicine_name}}  {{item.count}}  {{item.unit}}  
-          </span><br>
+            {{item.medicine_name}}  {{item.count}}  {{item.unit}}  <br>
+          </span>
         </span>
-      </h2>
+      
     </div>
   </div>
 
