@@ -44,6 +44,9 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
     tempObj = _.find(bObj, function(tObj){ return tObj.patients.patient_no == $routeParams.phoneId; });
     //console.log(tempObj);
     $scope.datas = tempObj;
+    if(tempObj.cases[0].images){
+      $scope.mainImageUrl = "img/" + tempObj.cases[0].images[0];
+    }
     //$scope.mainImageUrl = "img/" + tempObj.cases[0].images[0];
     $scope.current_recipe = tempObj.cases[0];
 
