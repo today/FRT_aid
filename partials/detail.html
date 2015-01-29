@@ -4,85 +4,90 @@
 </script>
 <table height="100%" width="100%" border="0">
   <tr>
-  <td style="vertical-align:top;width:150px;">
-    <div  ng-repeat="case in datas.cases | orderBy:to_Date:true | limitTo:15" >
-      <li ng-click="setCase(case)">
-        {{case.case_no}}
-      </li>
-      <li class="phone-thumbs" ng-repeat="image in case.images">
-        <img ng-src="img/{{image}}" ng-click="setImage('img/'+image, case)">
-      </li><hr/>
-  </div>
-</td>
+    <td style="vertical-align:top;width:150px;">
+    <div style="width:100%;height:100%;overflow:auto">
 
-<td style="vertical-align:top">
-  <span class="phone" ng-show="old_case_flag" >
-    <input type="button"  ng-click="goPrint( mainImageUrl )"  value=" 打印 ">
-    <img ng-src="{{mainImageUrl}}" width="600" height="800" />
-  </span>
+      <div  ng-repeat="case in datas.cases | orderBy:to_Date:true | limitTo:15" >
+        <li ng-click="setCase(case)">
+          {{case.case_no}}
+        </li>
+        <li class="phone-thumbs" ng-repeat="image in case.images">
+          <img ng-src="img/{{image}}" ng-click="setImage('img/'+image, case)">
+        </li><hr/>
+      </div>
+      
+      </div>
 
-  <div   ng-hide="old_case_flag" class="detail_B">
+    </td>
 
-    <h3>
-      处方编号：{{current_recipe.case_no}} 
-      <input type="button"  ng-click="go_print2()"  value=" 打印 ">  <br><br>
-    </h3>
-    <div id="id_chufang">
-      <h3>
+    <td style="height:100%;">
+      <span class="phone" ng-show="old_case_flag" >
+        <input type="button"  ng-click="goPrint( mainImageUrl )"  value=" 打印 " style="font-size:4em;">
+        <img ng-src="{{mainImageUrl}}" width="600" height="800" />
+      </span>
+
+      <div ng-hide="old_case_flag" style="height:800px;">
+        <span class="detail_C">   
+          处方编号：{{current_recipe.case_no}}   
+          <input type="button"  ng-click="go_print2()"  value=" 打印 " style="font-size:4em;">
+        </span>
+        <div id="id_chufang">
+          <div  class="detail_C">
+            定病：{{current_recipe.dingbing}}<br>
+            定性：{{current_recipe.dingxing}}<br>
+            定症：{{current_recipe.dingzheng}}<br><br>
+
+            <span ng-repeat="item in current_recipe.recipe" style="float:left;">
+              <span ng-if="item.medicine">
+                {{item.medicine}}  {{item.count}}{{item.unit}} &nbsp;&nbsp; <br>
+              </span>
+              <span ng-if="item.medicine_name">
+                {{item.medicine_name}}  {{item.count}}{{item.unit}} &nbsp;&nbsp; <br>
+              </span>
+            </span>
+          </div>
+          
+        </div>
+      </div>
+      
+    </td>
+
+    <td width="200" style="vertical-align:top">
+      <h1>
+        <img src="img/{{datas.patients.image}}" class="phone-thumbs">
+        <br/>
+        {{datas.patients.patient_no}}   {{datas.patients.patient_name}}  
+      </h1>
+
+      <div>
+        <span>性别：{{datas.patients.sex}}  &nbsp;&nbsp;年龄：{{datas.patients.age}}</span>
+        <br><!--    span>联系电话：{{datas.patients.phone_no}}</span>    -->
+        <span>备注：{{datas.patients.comment}}</span>
+      </div>
+
+      <div ng-show="old_case_flag">
+        <hr>
+        处方编号：{{current_recipe.case_no}}<br>
         定病：{{current_recipe.dingbing}}<br>
         定性：{{current_recipe.dingxing}}<br>
-        定症：{{current_recipe.dingzheng}}
-      </h3>
-      <h2>药方：</h2>
-          <span ng-repeat="item in current_recipe.recipe" class="detail_C" style="float:left;">
+        定症：{{current_recipe.dingzheng}}<br>
+
+        <div class="detail_A">
+          <br>药方：<br>
+
+          <span ng-repeat="item in current_recipe.recipe" >&nbsp;
             <span ng-if="item.medicine">
-              {{item.medicine}}  {{item.count}}{{item.unit}}  <br>
+              {{item.medicine}}  {{item.count}}  {{item.unit}}  <br>
             </span>
             <span ng-if="item.medicine_name">
-              {{item.medicine_name}}  {{item.count}}{{item.unit}}  <br>
+              {{item.medicine_name}}  {{item.count}}  {{item.unit}}  <br>
             </span>
           </span>
-    </div>
-  </div>
 
-</td>
+        </div>
+      </div>
 
-<td width="200" style="vertical-align:top">
-  <h1>
-    <img src="img/{{datas.patients.image}}" class="phone-thumbs">
-    <br/>
-    {{datas.patients.patient_no}}   {{datas.patients.patient_name}}  
-  </h1>
-
-  <div>
-    <span>性别：{{datas.patients.sex}}  &nbsp;&nbsp;年龄：{{datas.patients.age}}</span>
-    <br><!--    span>联系电话：{{datas.patients.phone_no}}</span>    -->
-    <span>备注：{{datas.patients.comment}}</span>
-  </div>
-
-  <div ng-show="old_case_flag">
-    <hr>
-    处方编号：{{current_recipe.case_no}}<br>
-    定病：{{current_recipe.dingbing}}<br>
-    定性：{{current_recipe.dingxing}}<br>
-    定症：{{current_recipe.dingzheng}}<br>
-
-    <div class="detail_A">
-      <br>药方：<br>
-      
-        <span ng-repeat="item in current_recipe.recipe" >&nbsp;
-          <span ng-if="item.medicine">
-            {{item.medicine}}  {{item.count}}  {{item.unit}}  <br>
-          </span>
-          <span ng-if="item.medicine_name">
-            {{item.medicine_name}}  {{item.count}}  {{item.unit}}  <br>
-          </span>
-        </span>
-      
-    </div>
-  </div>
-
-</td></tr></table>
+    </td></tr></table>
 
 
 

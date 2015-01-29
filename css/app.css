@@ -37,10 +37,10 @@ body {
 
 .detail_C {
   float: left;
-  margin: 0.5em 0.5em 0.1em 0.1em;
+  margin: 0.2em 0.2em 0.1em 0.1em;
   padding-bottom: 0.1em;
   list-style: none;
-  font-size: 1.2em;
+  font-size: 2em;
   float:left;
 }
 

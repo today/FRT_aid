@@ -82,17 +82,21 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams',
         var obj = document.getElementById('id_chufang');
 
         //打开一个新窗口newWindow
-        var newWindow=window.open("打印窗口","_blank");
+        var newWindow=window.open("打印窗口","w_print");
         //要打印的div的内容
         var docStr = "<link rel='stylesheet' href='css/app.css'>" + obj.innerHTML ;
         //打印内容写入newWindow文档
         newWindow.document.write(docStr);
         //关闭文档
         newWindow.document.close();
-        //调用打印机
-        newWindow.print();
-        //关闭newWindow页面
-        newWindow.close();
+        
+        setTimeout(function(){
+                          //调用打印机
+                          newWindow.print();
+                          //关闭newWindow页面
+                          newWindow.close();
+                        }, 1000);
+
     };
 
   }]);
