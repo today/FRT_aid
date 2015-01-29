@@ -1,4 +1,7 @@
+<script type="text/javascript">
 
+
+</script>
 <table height="100%" width="100%" border="0">
   <tr>
   <td style="vertical-align:top;width:150px;">
@@ -18,22 +21,28 @@
     <img ng-src="{{mainImageUrl}}" width="600" height="800" />
   </span>
 
-  <div ng-hide="old_case_flag" class="detail_B">
+  <div   ng-hide="old_case_flag" class="detail_B">
+
     <h3>
-      处方编号：{{current_recipe.case_no}}<br><br>
-      定病：{{current_recipe.dingbing}}<br>
-      定性：{{current_recipe.dingxing}}<br>
-      定症：{{current_recipe.dingzheng}}
+      处方编号：{{current_recipe.case_no}} 
+      <input type="button"  ng-click="go_print2()"  value=" 打印 ">  <br><br>
     </h3>
-    <h2>药方：</h2>
-        <span ng-repeat="item in current_recipe.recipe" class="detail_C" style="float:left;">
-          <span ng-if="item.medicine">
-            {{item.medicine}}  {{item.count}}{{item.unit}}  <br>
+    <div id="id_chufang">
+      <h3>
+        定病：{{current_recipe.dingbing}}<br>
+        定性：{{current_recipe.dingxing}}<br>
+        定症：{{current_recipe.dingzheng}}
+      </h3>
+      <h2>药方：</h2>
+          <span ng-repeat="item in current_recipe.recipe" class="detail_C" style="float:left;">
+            <span ng-if="item.medicine">
+              {{item.medicine}}  {{item.count}}{{item.unit}}  <br>
+            </span>
+            <span ng-if="item.medicine_name">
+              {{item.medicine_name}}  {{item.count}}{{item.unit}}  <br>
+            </span>
           </span>
-          <span ng-if="item.medicine_name">
-            {{item.medicine_name}}  {{item.count}}{{item.unit}}  <br>
-          </span>
-        </span>
+    </div>
   </div>
 
 </td>
@@ -61,7 +70,7 @@
     <div class="detail_A">
       <br>药方：<br>
       
-        <span ng-repeat="item in current_recipe.recipe" >
+        <span ng-repeat="item in current_recipe.recipe" >&nbsp;
           <span ng-if="item.medicine">
             {{item.medicine}}  {{item.count}}  {{item.unit}}  <br>
           </span>
