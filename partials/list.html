@@ -4,7 +4,7 @@
   </div>
   <br><br>
   <div>
-   <li ng-repeat="obj in datas | filter:query | orderBy:orderProp" class="list_A">
+   <li ng-repeat="obj in datas | filter:query | filter: noZero | orderBy:orderProp" class="list_A">
     <a href="#/phones/{{obj.patients.patient_no}}">
       <div>{{obj.patients.patient_no}} {{obj.patients.patient_name}}  </div>
     </a>

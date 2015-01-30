@@ -15,6 +15,11 @@ phonecatControllers.controller('PhoneListCtrl', ['$scope',
       aObj = JSON.parse(str_temp);
     }
     $scope.datas = aObj;
+
+    $scope.noZero = function(obj){
+      //return true; //
+      return obj.cases.length > 0;
+    };
     
     
   }]);
