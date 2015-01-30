@@ -22,14 +22,14 @@
 
     <td style="height:100%;">
       <span class="phone" ng-show="old_case_flag" >
-        <input type="button"  ng-click="goPrint( mainImageUrl )"  value=" 打印 " style="font-size:4em;">
+        <input type="button"  ng-click="goPrint( mainImageUrl )"  value=" 打印 " style="font-size:1.5em;">
         <img ng-src="{{mainImageUrl}}" width="600" height="800" />
       </span>
 
       <div ng-hide="old_case_flag" style="height:800px;">
         <span class="detail_C">   
           处方编号：{{current_recipe.case_no}}   
-          <input type="button"  ng-click="go_print2()"  value=" 打印 " style="font-size:4em;">
+          <input type="button"  ng-click="go_print2()"  value=" 打印 " style="font-size:1.5em;">
         </span>
         <div id="id_chufang">
           <div  class="detail_C">
